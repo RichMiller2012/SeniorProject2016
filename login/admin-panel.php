@@ -1,7 +1,24 @@
-<h1>Admin Panel</h1>
-
 <?php
+	session_start();
 
+	if(!isset($_SESSION['admin'])){
+		header("location:login.php?failed=attempt");
+	}
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Control Panel</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Admin Panel</h1>
+	<h4><a href="adminindex.php?logout=true">Logout</a></h4>
+<?php
+	include("dbconnect.php");
 	/*
 		begin adding all of the php includes for the different
 		scenarios of administrative tasks
@@ -28,4 +45,46 @@
 
 ?>
 
-<h4><a href="adminindex.php?logout=true">Logout</a></h4>
+ 
+ 
+<?php 
+    //admin root selection
+	if(!isset($_GET['type'])){
+?>	
+	<ul>
+		<li>
+			<a href="admin-panel.php?type=categories">
+				<button class="btn">Categories</button></a>
+		</li>
+		<li>
+			<a href="admin-panel.php?type=subcategories">
+				<button class="btn">Sub Categories</button></a>
+		</li>
+		<li>
+			<a href="admin-panel.php?type=articles">
+				<button class="btn">Articles</button></a>
+		</li>
+	</ul>
+	
+<?php
+	}
+?>
+
+
+<?php
+
+	//Selection paths
+	if(isset($_GET['type']) && $_GET['type'] === "categories"){
+		include("categories/categories.php");
+	}
+	if(isset($_GET['type']) && $_GET['type'] === "subcategories"){
+		include("subcategories/subcategories.php");
+	}
+	if(isset($_GET['type']) && $_GET['type'] === "articles"){
+		include("articles/articles.php");
+	}
+
+?>
+
+</body>
+</html>
