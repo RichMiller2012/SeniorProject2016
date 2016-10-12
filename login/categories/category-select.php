@@ -17,7 +17,9 @@
 					if(!empty($rs)){
 						do{
 ?>
-								<option value=<?php echo $rs['categoryID']?>><?php echo $rs['name'] ?></option>
+								<option value=<?php echo $rs['categoryID']?> 
+									<?php if(isset($_GET['categoryID']) && $rs['categoryID'] == $_GET['categoryID']){
+										echo "selected='selected'";}?>><?php echo $rs['name'] ?></option>
 <?php
 						} while($rs=mysqli_fetch_assoc($query));
 					}

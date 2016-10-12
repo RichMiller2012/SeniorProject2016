@@ -1,6 +1,8 @@
 <div class="container">
 <?php
-	//category control page
+	/* Category control page.
+	   This page will handle the CRUD for all
+	   categories, including subcategories */
 
 	//category selection
 	include("category-select.php"); 

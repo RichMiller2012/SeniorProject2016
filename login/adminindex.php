@@ -6,17 +6,19 @@
 	//start the session
 	session_start();
 	
-	//check if user is already signed in_array
-	if(isset($_SESSION['admin'])){
-		header("location: admin-panel.php");
-	}
-	
 	//check if user has logged out, clear the session if so
 	if(isset($_GET['logout'])) {
 		unset($_SESSION['admin']);
 		header("location: login.php");
 	}
 	
+	//check if user is already signed in
+	if(isset($_SESSION['admin'])){
+		header("location: admin-panel.php");
+	} else {
+		header("location: login.php");
+	}
+		
 	//check if user has clicked the logout button
 	if(isset($_POST['login'])){
 
