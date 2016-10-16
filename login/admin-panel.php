@@ -46,8 +46,6 @@
 
 ?>
 
- 
- 
 <?php 
     //admin root selection
 	if(!isset($_GET['type'])){
