@@ -21,10 +21,10 @@
 	
 	//attach existing category confirm
 	include("subcat-existing-confirm.php");
-	/*	
+
 	//attach existing category submit
-	include("subcat-existing-submit.php")
-	*/
+	include("subcat-existing-submit.php");
+
 	
 	//attach new category confirm
 	include("subcat-new-confirm.php");

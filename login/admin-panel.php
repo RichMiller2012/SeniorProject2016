@@ -17,6 +17,7 @@
 <body>
 	<h1>Admin Panel</h1>
 	<h4><a href="adminindex.php?logout=true">Logout</a></h4>
+	<a href="admin-panel.php"><button class="btn btn-primary">Main Panel</button></a>
 <?php
 	include("dbconnect.php");
 	/*

@@ -1,6 +1,6 @@
 <div class="row">
 <?php
-	if(isset($_GET['add_existing'])){
+	if(isset($_GET['confirm_add_existing'])){
 ?>
 		<div class="col-md-12">
 			<h4>Connect these two categories together?</h4>
@@ -10,10 +10,10 @@
 	<form action="admin-panel.php" action="GET">
 		<div class="col-md-1">
 			<input type="submit" class="btn btn-success" value="Submit">
-			<input type="hidden" name="parentID" value="<?php $_GET['parent_selectID']?>">
-			<input type="hidden" name="childID" value="<?php $_GET['child_selectID']?>">
+			<input type="hidden" name="parentID" value="<?php echo $_GET['parent_selectID']?>">
+			<input type="hidden" name="childID" value="<?php echo $_GET['child_selectID']?>">
 			<input type="hidden" name="type" value="subcategories">
-			<input type="hidden" name="add_existing" value="submit">
+			<input type="hidden" name="submit_update_existing" value="submit">
 		</div>
 	</form>
 	<div class="col-md-1">
