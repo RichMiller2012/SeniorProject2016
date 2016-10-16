@@ -3,7 +3,7 @@
 	$query = mysqli_query($dbconnect, $sql);
 	$rs = mysqli_fetch_assoc($query);
 ?>
-<form action="subcategories.php" method="get">
+<form action="admin-panel.php" method="get">
 <div class="col-md-4">
 	<select id="parent_select" name="parent_selectID" class="form-control">
 <?php
@@ -25,9 +25,10 @@
 <div class="col-md-4">
 
 <?php
-	if(isset($_GET['new_subcat'])){		
+	if(isset($_GET['add_new'])){		
 ?>
-		<input type="text" name="add_subcat" placeholder="enter new subcategory"/>
+		<input type="text" name="add_subcat" class="form-control" placeholder="Enter New Subcategory"/>
+		<input type="hidden" name="add_new" value="confirm"/>
 <?php
 	} else {
 		mysqli_data_seek($query,0); //reset result set pointer
@@ -45,6 +46,7 @@
 <?php
 				}while($rs=mysqli_fetch_assoc($query));
 			}
+	}
 ?>
 		</select>
 </div>
@@ -52,12 +54,26 @@
 	<input type="submit" class="btn btn-primary" value="Submit"/>
 </div>
 <div class="col-md-1">
+
+<?php
+	if(isset($_GET['add_new'])){
+?>
+		<input type="submit" class="btn btn-warning" value="Select"/>
+		<input type="hidden" name="add_existing">
+		<input type="hidden" name="type" value="subcategories"/>
+<?php
+	} else {
+?>
 	<input type="submit" class="btn btn-warning" value="Add New" />
-</div>
+	<input type="hidden" name="add_new" />
+	<input type="hidden" name="type" value="subcategories"/>
+
 <?php
 	}
 ?>	
-<div class="col-md-1">
-	<button type="cancel" class="btn btn-danger">Cancel</button>
 </div>
+<div class="col-md-1">
+	<a href="admin-panel.php?type=subcategories"><button type="cancel" class="btn btn-danger">Cancel</button></a>
+</div>
+<!-- move selection button outside the form so it does not submit the form. Then just set the GET property -->
 </form>

@@ -4,7 +4,6 @@
 	$edit_rs = mysqli_fetch_assoc($edit_query);			
 		
 	if(!empty($edit_rs)){
-		echo "EDIT MODE";
 ?>
 		<div class="row">
 			<div class="col-md-3">

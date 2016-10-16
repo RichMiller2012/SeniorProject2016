@@ -18,19 +18,21 @@
 	//subcategory selection
 	include("subcat-select.php");
 
-	/*
+	
 	//attach existing category confirm
 	include("subcat-existing-confirm.php");
-		
+	/*	
 	//attach existing category submit
 	include("subcat-existing-submit.php")
+	*/
 	
 	//attach new category confirm
 	include("subcat-new-confirm.php");
 	
+
 	//attach new category submit
 	include("subcat-new-submit.php");
-	*/
+
 	
 ?>
 	</div>
