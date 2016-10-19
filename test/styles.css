@@ -1,0 +1,113 @@
+div {
+  display: block;
+}
+
+body{
+  margin: 0;
+}
+
+/* Header CSS */
+#main-wrapper{
+  width: 100%;
+}
+.header-wrapper{
+  width: 100%;
+  background-color: white;
+  margin-top:10px;
+}
+.header{
+  width: 100%;
+}
+#header-door{
+  height: 50px;
+  width: 50px;
+  padding-left: 15%;
+  float: left;
+}
+#header-title{
+  float: left;
+  padding-left: 100px;
+}
+#search-bar{
+  float:right;
+  padding-right: 15%;
+  height: 40px;
+  padding-top:10px;
+}
+
+/* Nav Bar CSS */
+#nav-wrapper{
+  clear: left;
+  height: 80px;
+  background-color: #F5DEB3;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 15%;
+    padding-top: auto;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+/* Font CSS
+  go to http://www.cssfontstack.com/ for different font css
+*/
+
+h1 {
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
+	font-size: 28px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+h3 {
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15.4px;
+}
+p {
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+blockquote {
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+pre {
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
