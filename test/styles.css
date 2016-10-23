@@ -6,6 +6,10 @@ body{
   margin: 0;
 }
 
+p{
+  padding:15px;
+}
+
 /* Header CSS */
 .main-wrapper{
   position: fixed;
@@ -76,6 +80,11 @@ body{
     text-decoration: none;
 }
 
+/* Change the link color to #111 (black) on hover */
+#navbar-list li a:hover {
+    background-color: #A8936A
+}
+
 /* main content */
 #main-image {
   position: absolute;
@@ -83,29 +92,39 @@ body{
   height: 100%;
   opacity: 0.3;
 }
+
 .carousel-container{
+  opacity: 0.9;
+  border-radius: 10px;
   height:400px;
   background-color: #F5DEB3;
-  padding: 20px;
-  margin:20px;
+  margin:40px;
   margin-top: 200px;
 }
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      margin: auto;
+      height: 400px
+}
 .site-info{
+  opacity: 0.9;
+  border-radius: 10px;
   float:left;
-  margin:20px;
-  padding: 20px;
+  margin:40px;
   height:500px;
   width: 100%;
   background-color: #F5DEB3;
 }
 
 .updates-info{
-
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
+  opacity: 0.9;
+  border-radius: 10px;
+  float:left;
+  margin:40px;
+  height:800px;
+  width: 100%;
+  background-color: #F5DEB3;
 }
 
 /* Font CSS
@@ -127,6 +146,9 @@ h3 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 15.4px;
+}
+h5{
+  font-size: 20px;
 }
 p {
 	font-family: Geneva, Tahoma, Verdana, sans-serif;
