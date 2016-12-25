@@ -4,31 +4,31 @@ div {
 
 body{
   margin: 0;
+  background-color:#A29D8A;
+  color:white;
 }
 
 p{
   padding:15px;
 }
 
-/* Header CSS */
-.main-wrapper{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background-size: auto;
-  background-image: url('img/main-image.jpg');
-}
+
 .header-wrapper{
-  position: fixed;
+  position: relative;
   z-index: 1;
   width: 100%;
-  background-color: white;
   padding-top: 20px;
 }
 .header{
   width: 100%;
   
+}
+
+#header-logo{
+  width:100%;
+  height: 75px;
+  padding-left: 5%;
+  float: left;
 }
 
 #header-title{
@@ -42,22 +42,12 @@ p{
   float: left;
   z-index: 2;
 }
-#search-bar{
-  z-index: 2;
-  float:right;
-  padding-right: 15%;
-  height: 50px;
-  position:relative;
-  top:0;
-}
 
 /* Nav Bar CSS */
 #nav-wrapper{
   clear: left;
   height: 80px;
-  background-color: #F5DEB3;
-  box-shadow: 10px 10px 5px #888888;
-
+  background-color: #3b3315;
 }
 #navbar-list {
     position: relative;
@@ -95,7 +85,7 @@ p{
 
 /* Change the link color to #111 (black) on hover */
 #navbar-list li a:hover {
-    background-color: #A8936A
+    background-color: #A07447
 }
 
 /* main content */
@@ -108,36 +98,48 @@ p{
 
 .carousel-container{
   opacity: 0.9;
-  border-radius: 10px;
-  height:400px;
-  background-color: #F5DEB3;
-  margin:40px;
-  margin-top: 200px;
+  height:600px;
+  background-color: #3b3315;
 }
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 50%;
-      margin: auto;
-      height: 400px
+     height: 600px;
+	  width:100%
 }
 .site-info{
-  opacity: 0.9;
-  border-radius: 10px;
+  opacity: 0.5;
   float:left;
   margin:40px;
   height:500px;
   width: 100%;
-  background-color: #F5DEB3;
+  background-color: #A07447;
 }
 
 .updates-info{
-  opacity: 0.9;
-  border-radius: 10px;
+  opacity: 0.5;
   float:left;
   margin:40px;
-  height:800px;
+  max-height:800px;
   width: 100%;
-  background-color: #F5DEB3;
+  background-color: #A07447;
+  overflow-y: auto;
+}
+.updates-inner{
+	margin:10px;
+}
+.new-update-block{
+	padding:5px;
+}
+.new-update-block:hover{
+	opacity:0.5;
+}
+.updates-inner a{
+	text-decoration: none;
+	color: white;
+}
+.new-alert{
+	color:yellow;
+	text-shadow:20px,20px, 10px,red;
 }
 
 
@@ -145,28 +147,37 @@ p{
 #footer{
 	opacity: 0.9;
 	height:25px;
-	background-color: #F5DEB3;
+	background-color: #3b3315;
 	bottom:0;
 	text-align:center;
-	position:fixed;
+	position:relative;
 	width:100%;
 }
 
 /* Category, Titles, and Article CSS  */
 
 .cat-grid{
-	margin-top:200px;
+	margin-top:100px;
 	
 }
 
 .category-item{
 	height:120px;
-	background-color: #F5DEB3;
+	background-color: #A07447;
 	margin:20px;
 	border-radius: 10px;
+	box-shadow: 5px 5px 5px #888888;	
+}
+.category-item:hover{
+	opacity:0.8;
 }
 .list-group-item{
-	background-color:#F5DEB3;
+	background-color:#A07447;
+	border:none;
+}
+.list-group-item:hover{
+	opacity:0.8;
+	border:none;
 }
 .title-box{
 	
@@ -175,17 +186,18 @@ p{
 	margin-bottom:300px;
 }
 .article{
-	margin-top:200px;
+	margin-top:100px;
 	margin-left:auto;
 	margin-right:auto;
 }
 .article-section{
-	background-color:#F5DEB3;
+	background-color:#A07447;
 	padding:50px;
 	min-height:1000px;
 	border-radius:50px;
 	opacity:0.9;
 	margin-bottom:300px;
+	box-shadow: 5px 5px 5px #888888;	
 }
 
 
@@ -209,6 +221,9 @@ h3 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 15.4px;
+}
+h4, h1, h2{
+	color:white;
 }
 h5{
   font-size: 20px;
@@ -236,4 +251,8 @@ pre {
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 18.5714px;
+}
+
+.no-pad{
+  padding: 0;
 }
