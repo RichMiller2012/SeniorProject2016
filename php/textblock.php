@@ -44,5 +44,6 @@
 		</div>
 		<br >
 		<h6 id="avg-rate-txt"><?php echo $average_rating ?></h6>
+		<?php include "php/print-friendly/print-friendly.php" ?>
 	</div>
 </div>

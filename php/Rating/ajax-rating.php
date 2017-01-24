@@ -19,7 +19,7 @@
 	
 	if($rating > 0 && $articleId > 0){
 		$ip = $_SERVER['REMOTE_ADDR'];
-		$ip_sql = "SELECT * FROM rating WHERE address='$ip'";
+		$ip_sql = "SELECT * FROM rating WHERE address='$ip' AND textblockId=$articleId";
 		$ip_query = mysqli_query($dbconnect, $ip_sql);
 		$ip_rs = mysqli_fetch_assoc($ip_query);
 		
