@@ -65,6 +65,7 @@
 			<li><a href="index.php?state=category&type=crafts&categoryID=0">Crafts & Sewing</a></li>
 			<li><a href="index.php?state=category&type=garden&categoryID=0">Homestead & Garden</a></li>
 			<li><a href="index.php?state=category&type=family&categoryID=0">Family</a></li>
+			<li><a href="http://crystalscountrystore.com/ebooks.htm">Ebooks</a></li>
 			<li><a href="">My Blog!</a></li>
 			<li><a href="php/login/index.php">Webmaster</a></li>
 		  </ul>	  

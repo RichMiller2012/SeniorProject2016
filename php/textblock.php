@@ -1,5 +1,7 @@
+
 <div class="row article">
-	<div class="col-md-2">
+	<div class="col-md-1">
+	  
 	</div>
 	<div class="col-md-8">
 
@@ -22,28 +24,38 @@
 		$average_rating = 'This article has not yet been rated. Be the first!';
 	}
 ?>
-	<div class="article-section">
+		<div class="article-section">
 <?php
-	if(!empty($rs)){
-		
-		do{
-			?>
-			<p><?php echo $rs['added_date'] ?></p>
-			<h1><?php echo $rs['title'] ?></h1>
-			<h2><?php echo $rs['description']?></h4>
-			<hr />
-			<h1><?php echo nl2br($rs['text'])?></h1>
-			<?php			
-		} while($rs=mysqli_fetch_assoc($query));
-	}
+		if(!empty($rs)){
+			
+			do{
+				?>
+				<p><?php echo $rs['added_date'] ?></p>
+				<h1><?php echo $rs['title'] ?></h1>
+				<h2><?php echo $rs['description']?></h4>
+				<hr />
+				<h1><?php echo nl2br($rs['text'])?></h1>
+				<?php			
+			} while($rs=mysqli_fetch_assoc($query));
+		}
 ?>	
-		<hr />
-		<h6>Rate this article!</h6>
-	    <div class="article-section-footer">
-		    <?php include "php/Rating/rating.php"?>
+			<h6>Rate this article!</h6>
+			<div class="article-section-footer">
+				<?php include "php/Rating/rating.php"?>
+			</div>
+			<br >
+			<h6 id="avg-rate-txt"><?php echo $average_rating ?></h6>
+			<hr />
+			<a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF">
+				<img style="border:none;-webkit-box-shadow:none;box-shadow:none;" src="http://cdn.printfriendly.com/pf-button-both.gif" alt="Print Friendly and PDF"/>
+			</a>
+			<script src="js/print-friendly.js"></script>
 		</div>
-		<br >
-		<h6 id="avg-rate-txt"><?php echo $average_rating ?></h6>
-		<?php include "php/print-friendly/print-friendly.php" ?>
+	</div>
+    <div class="col-md-1">
+
+	</div>	
+	<div class="col-md-2">
+	  <?php include("php/adsense-bar/adsense-bar.php"); ?>
 	</div>
 </div>

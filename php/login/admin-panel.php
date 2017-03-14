@@ -65,7 +65,11 @@
 		</li>
 		<li>
 			<a href="admin-panel.php?type=updates">
-				<button class="btn">Updates</button></a>
+				<button class="btn">Updates Interval</button></a>
+		</li>
+		<li>
+			<a href="admin-panel.php?type=file-upload">
+				<button class="btn">Upload Images</button></a>
 		</li>
 	</ul>
 	
@@ -88,6 +92,9 @@
 	}
 	if(isset($_GET['type']) && $_GET['type'] === "updates"){
 		include("updates/updates.php");
+	}
+	if(isset($_GET['type']) && $_GET['type'] === "file-upload"){
+		include("upload/upload-form.php");
 	}
 
 ?>
