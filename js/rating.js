@@ -60,11 +60,8 @@ sendData = function(rating, articleId) {
 		data:{rating:rating, articleId:articleId},
 		type:'POST',
 		success:function(data, status){
-			alert(data);
 		},
 		error:function(xhr, desc, err){
-			alert(xhr);
-			alert("Details: " + desc + "\nError:" + err);
 		}
 	});
 }
