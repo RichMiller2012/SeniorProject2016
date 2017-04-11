@@ -85,6 +85,7 @@
 						"<div class='col-md-2'>\n" +
 							"<button class='item-remove btn-danger' value=" + cart_item.id + ">-</button>\n" +
 						"</div>\n" +
+						"<data class='user-selected-pdfs' value=" + cart_item.id + "></data>"
 					"</div>\n";	
 				
 				
@@ -111,6 +112,26 @@
 				
 				printCartList();
 			});
+			
+			
+			//checkout button functionality
+			$(".checkout-btn").click(function(){
+				
+				ids = []
+				//gather the selected Ids for database lookup and verification
+				$('.user-selected-pdfs').each(function(){
+					ids.push($(this).attr('value'));
+				})
+				
+				//make sure the user has selected at least one
+				if(ids.length > 0){}
+					$.ajax({
+						type: "POST",
+						url: 'php/ebooks/shopping-cart/prepare-purchase.php',
+						data: {ids : ids}
+					});
+			    }
+			});
 		});
 	</script>
 	
@@ -121,7 +142,7 @@
 			<div class="row">
 				<div class="col-md-10">
 					<ul class="selected-items">
-						
+						<li>Select an Ebook!</li>
 					</ul>
 				</div>
 			</div>
@@ -130,6 +151,10 @@
 				<h2 id="cart-total-label">Total:</h2>
 				<h2 id="cart-value">$0.00</h2>
 			</div>
+			<div class="row">
+			<?php include("php/ebooks/shopping-cart/prepare-purchase.php"); ?>
+			    <button class="checkout-btn btn-success">Check Out Items</button>
+		    </div>
 		</div>
 	</div>
 
