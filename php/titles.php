@@ -9,8 +9,6 @@
 	$query = mysqli_query($dbconnect, $sql);
 	$rs = mysqli_fetch_assoc($query);
 	
-	
-	
 	if(!empty($rs)){
 		do {
 ?>				

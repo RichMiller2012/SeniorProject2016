@@ -12,13 +12,14 @@
   
  
   <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" type="text/css" href="css/autosuggest-style.css">
   <link rel="stylesheet" type="text/css" href="css/rating.css">
+  <link rel="stylesheet" type="text/css" href="css/shopping-cart.css">
 </head>
 <body>
 
@@ -65,7 +66,7 @@
 			<li><a href="index.php?state=category&type=crafts&categoryID=0">Crafts & Sewing</a></li>
 			<li><a href="index.php?state=category&type=garden&categoryID=0">Homestead & Garden</a></li>
 			<li><a href="index.php?state=category&type=family&categoryID=0">Family</a></li>
-			<li><a href="http://crystalscountrystore.com/ebooks.htm">Ebooks</a></li>
+			<li><a href="index.php?state=ebook">Ebooks</a></li>
 			<li><a href="">My Blog!</a></li>
 			<li><a href="php/login/index.php">Webmaster</a></li>
 		  </ul>	  

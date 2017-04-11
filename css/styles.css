@@ -180,7 +180,6 @@ p{
 
 .cat-grid{
 	margin-top:100px;
-	
 }
 
 .category-item{
@@ -212,6 +211,11 @@ p{
 	width:50%;
 	opacity:0.4;
 	
+}
+
+.ebook-list{
+	margin-top:100px;
+	margin-bottom:300px;
 }
 
 .title-list{
@@ -247,6 +251,14 @@ p{
 	display:inline
 }
 
+.shopping-cart{
+	background-image: url("../img/backgrounds/secondary-background.png");
+	padding:50px;
+	border-radius:50px;
+	opacity:0.9;
+	margin-bottom:300px;
+	box-shadow: 5px 5px 5px #888888;	
+}
 
 
 

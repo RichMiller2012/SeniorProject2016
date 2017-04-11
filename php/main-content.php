@@ -8,4 +8,8 @@
 	else if ($_GET['state'] === 'text'){
 		include("php/textblock.php");
 	}
+	
+	else if($_GET['state'] === 'ebook'){
+		include("php/ebooks/ebook_index.php");
+	}
 ?>

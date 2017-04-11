@@ -1,0 +1,30 @@
+.shopping-cart{
+	
+}
+
+.shopping-cart-total{
+	display:inline-flex;
+}
+
+#cart-total-label {
+	padding-right:25px;
+}
+
+#cart-value{
+	color:green;
+}
+
+.selected-items{
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+.shopping-cart p{
+	padding:0px;
+}
+
+.item-remove{
+	bottom:0px;
+	height:25px;
+	width:25px;
+}
