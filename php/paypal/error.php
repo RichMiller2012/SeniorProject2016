@@ -1,1 +1,1 @@
-<p>Something went wrong</p>
+<p>Something went wrong: Paypal error</p>

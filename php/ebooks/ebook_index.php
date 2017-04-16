@@ -2,7 +2,7 @@
 	<div class="col-md-8">
 		<ul>
 <?php
-
+	include($_SERVER['DOCUMENT_ROOT'] . "/php/dbconnect.php");
 
 	$ebook_sql = "SELECT * FROM ebooks";
 	$ebook_query = mysqli_query($dbconnect, $ebook_sql);
@@ -52,7 +52,16 @@
 				//convert to currency
 				
 				$("#cart-value").html("$" + totalPrice.toFixed(2));
-			});			
+				
+				var ids = [];
+				//gather the selected Ids for database lookup and verification
+				$('.user-selected-pdfs').each(function(){
+					ids.push($(this).attr('value'));
+				});
+				
+				$("#selected-ids").attr("value", ids);
+				$("#selected-price").attr("value", totalPrice);
+			});	
 		}
 			
 		
@@ -110,28 +119,9 @@
 				});
 				
 				printCartList();
-			});
+			});	
+		});	
 			
-			
-			//checkout button functionality
-			$(".checkout-btn").click(function(){
-				
-				ids = []
-				//gather the selected Ids for database lookup and verification
-				$('.user-selected-pdfs').each(function(){
-					ids.push($(this).attr('value'));
-				})
-				
-				//make sure the user has selected at least one
-				if(ids.length > 0){
-					$.ajax({
-						type: "POST",
-						url: 'php/ebooks/shopping-cart/prepare-purchase.php',
-						data: {ids : ids}
-					});
-			    }
-			});
-		});
 	</script>
 	
 	<div class="col-md-3">
@@ -151,11 +141,18 @@
 				<h2 id="cart-value">$0.00</h2>
 			</div>
 			<div class="row">
-			<?php include("php/ebooks/shopping-cart/prepare-purchase.php"); ?>
-			    <button class="checkout-btn btn-success">Check Out Items</button>
+			  <form action="/php/paypal/payment.php" method="POST">
+			    <input id="selected-ids" type="hidden" name="ids"> 
+				<input id="selected-price" type="hidden" name="price">
+				<input type="submit" value="Check Out Ebooks" class="btn-success">
+			  </form>
 		    </div>
 		</div>
 	</div>	
 </div>
+
+<?php
+ include("info_modal.php");
+?>
 
 	

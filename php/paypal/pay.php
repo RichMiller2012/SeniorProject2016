@@ -34,8 +34,7 @@
 			// CHARGE THE USER!!!
 			$payment->execute($execution, $api);
 			
-			header('Location: index.php');
-			
+			header("Location: ../../index.php?state=ebook&success=true");
 			
 		} else {
 			

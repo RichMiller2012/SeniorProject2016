@@ -148,7 +148,7 @@
 			include('php/updates_section/updates_list.php');
 ?>
 		  </div>
-		</div 
+		</div >
 	  </div>
 	</div>
 
