@@ -3,7 +3,6 @@
 		<ul>
 <?php
 
-	include("php/paypal/payment.php");
 
 	$ebook_sql = "SELECT * FROM ebooks";
 	$ebook_query = mysqli_query($dbconnect, $ebook_sql);
@@ -124,7 +123,7 @@
 				})
 				
 				//make sure the user has selected at least one
-				if(ids.length > 0){}
+				if(ids.length > 0){
 					$.ajax({
 						type: "POST",
 						url: 'php/ebooks/shopping-cart/prepare-purchase.php',
@@ -156,10 +155,7 @@
 			    <button class="checkout-btn btn-success">Check Out Items</button>
 		    </div>
 		</div>
-	</div>
-
-	<?php include("php/ebooks/shopping-cart/prepare-purchase.php"); ?>
-	
+	</div>	
 </div>
 
 	

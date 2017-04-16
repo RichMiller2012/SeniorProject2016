@@ -34,6 +34,8 @@
 			// CHARGE THE USER!!!
 			$payment->execute($execution, $api);
 			
+			header('Location: index.php');
+			
 			
 		} else {
 			
