@@ -16,9 +16,10 @@
 					<div class="col-md-5">
 						<div class="title-box">
 						  <div class="row">
-							<h4 class="ebook-title" value='<?php echo $ebook_rs['title'] ?>'><?php echo $ebook_rs['title'] ?></h4>
-							<p class="ebook-description"><?php echo $ebook_rs['description'] ?></p>
-							<data class="ebook-id" value=<?php echo $ebook_rs['ebook_id']?>></data>
+							<h4 class="ebook-title" value='<?php echo $ebook_rs['title']?>'><?php echo $ebook_rs['title'] ?></h4>
+							<p class="ebook-description"><?php echo $ebook_rs['description']?></p>
+							<data class="ebook-id" value='<?php echo $ebook_rs['ebook_id']?>'></data>
+							<data class="ebook-price" value='<?php echo $ebook_rs['price']?>'></data>
 						  </div>
 						</div>
 					</div>
@@ -91,9 +92,9 @@
 				var arrayHasItem = false;
 				
 				//get the data from the selected item
-				var price = $(this).closest(".row").find('.ebook-price').attr('value');
-				var id = $(this).closest(".row").find('.ebook-id').attr('value');
-				var title = $(this).closest(".row").find('.ebook-title').attr('value');
+				var price = $(this).closest(".shopping-cart-item").find('.ebook-price').attr('value');
+				var id = $(this).closest(".shopping-cart-item").find('.ebook-id').attr('value');
+				var title = $(this).closest(".shopping-cart-item").find('.ebook-title').attr('value');
 						
 				var cart_item = {};
 				cart_item.price = price;
