@@ -38,7 +38,7 @@
 			
 		} else {
 			
-			header('Location: cacnelled.php');
+			header("Location: ../../index.php?state=ebook&success=false");
 		}
 	}
 	

@@ -11,17 +11,37 @@
 	if(!empty($ebook_rs)){
 		do{
 ?>
-			<li class="list-group-item">
+			<li class="list-group-item shopping-cart-item">
 				<div class="row">
 					<div class="col-md-5">
 						<div class="title-box">
-							<button class="add-cart-button btn-primary">Add to Cart</button>
+						  <div class="row">
 							<h4 class="ebook-title" value='<?php echo $ebook_rs['title'] ?>'><?php echo $ebook_rs['title'] ?></h4>
 							<p class="ebook-description"><?php echo $ebook_rs['description'] ?></p>
-							<h4 class="ebook-price" value=<?php echo $ebook_rs['price'] ?>>$<?php echo $ebook_rs['price'] ?></h4>
-							<a href="php/paypal/payment.php?price=<?php echo $ebook_rs['price'] ?>"  class="btn">Buy it!</a>
 							<data class="ebook-id" value=<?php echo $ebook_rs['ebook_id']?>></data>
+						  </div>
 						</div>
+					</div>
+					<div class="col-md-3">
+					</div>
+					<div class="col-md-4">
+					  <div class="row">
+						<div class="col-md-6">
+							<img class="add-cart-button cart-button" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+						</div>
+						<div class="col-md-6">
+							<form action="/php/paypal/payment.php" method="POST">
+								<input id="single-id" type="hidden" name="ids" value="<?php echo $ebook_rs['ebook_id']?>"> 
+								<input id="selected-price" type="hidden" name="price" value="<?php echo $ebook_rs['price']?>">
+								<input type="image" class="buy-now-button cart-button" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png" alt="Buy Now">
+							</form>
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="col-md-12" id="price-label">
+							<h1>$<?php echo $ebook_rs['price'] ?></h1>
+						</div>
+					  </div>
 					</div>
 				</div>
 			</li>
@@ -71,9 +91,9 @@
 				var arrayHasItem = false;
 				
 				//get the data from the selected item
-				var price = $(this).siblings('.ebook-price').attr('value');
-				var id = $(this).siblings('.ebook-id').attr('value');
-				var title = $(this).siblings('.ebook-title').attr('value');
+				var price = $(this).closest(".row").find('.ebook-price').attr('value');
+				var id = $(this).closest(".row").find('.ebook-id').attr('value');
+				var title = $(this).closest(".row").find('.ebook-title').attr('value');
 						
 				var cart_item = {};
 				cart_item.price = price;
@@ -144,7 +164,7 @@
 			  <form action="/php/paypal/payment.php" method="POST">
 			    <input id="selected-ids" type="hidden" name="ids"> 
 				<input id="selected-price" type="hidden" name="price">
-				<input type="submit" value="Check Out Ebooks" class="btn-success">
+				<input type="image" class="cart-button" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-44px.png" alt="PayPal Checkout">
 			  </form>
 		    </div>
 		</div>

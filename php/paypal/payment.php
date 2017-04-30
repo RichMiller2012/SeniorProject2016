@@ -14,8 +14,10 @@
 	if(isset($_POST['ids'])){
 		$ids = $_POST['ids'];
 		
+		$_SESSION['ebook_ids'] = $_POST['ids'];
 		
 		$select_ebook_sql = "SELECT * FROM ebooks WHERE ebook_id IN ($ids)";
+		echo $select_ebook_sql;
 		$select_ebook_query = mysqli_query($dbconnect, $select_ebook_sql);
 		$select_ebook_rs = mysqli_fetch_assoc($select_ebook_query);
 		

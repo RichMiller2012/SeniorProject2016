@@ -28,3 +28,28 @@
 	height:25px;
 	width:25px;
 }
+.add-cart-button{
+	margin-top:15%;
+}
+
+.buy-now-button{
+	margin-top:15%;
+}
+
+.shopping-cart-item:hover{
+	opacity:1.0;
+}
+
+.cart-button:hover{
+	opacity:0.5;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+#price-label{
+	text-align:center;
+}
+
+#price-label > h1{
+	color:green;
+	font-size:45px;
+}
