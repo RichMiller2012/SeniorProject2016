@@ -12,4 +12,8 @@
 	else if($_GET['state'] === 'ebook'){
 		include("php/ebooks/ebook_index.php");
 	}
+	
+	else if($_GET['state'] === 'thanks'){
+		include("php/paypal/thanks.php");
+	}
 ?>

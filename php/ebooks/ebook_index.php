@@ -173,7 +173,7 @@
 </div>
 
 <?php
- include("info_modal.php");
+ //include("info_modal.php");
 ?>
 
 	

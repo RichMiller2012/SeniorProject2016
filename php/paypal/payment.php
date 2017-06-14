@@ -14,7 +14,9 @@
 	if(isset($_POST['ids'])){
 		$ids = $_POST['ids'];
 		
-		$_SESSION['ebook_ids'] = $_POST['ids'];
+		session_start();
+		
+		$_SESSION['ebook_ids'] = $ids;
 		
 		$select_ebook_sql = "SELECT * FROM ebooks WHERE ebook_id IN ($ids)";
 		echo $select_ebook_sql;
@@ -70,7 +72,9 @@
 			->setTransactions([$transaction]);
 			
 		// RedirectUrls
-		$redirectUrls->setReturnUrl('http://localhost/php/paypal/pay.php?approved=true')
+		$redirectUrls->setReturnUrl('http://localhost/index.php?state=thanks'
+		//'http://localhost/php/paypal/pay.php?approved=true'
+		)
 			->setCancelUrl('http://localhost/php/paypal/pay.php?approved=false');
 			
 		$payment->setRedirectUrls($redirectUrls);
