@@ -172,8 +172,19 @@ p{
 	background-image: url("../img/backgrounds/primary-background.png");
 	bottom:0;
 	text-align:center;
-	position:relative;
 	width:100%;
+}
+
+#copywright{
+	display:inline;
+	position:absolute;
+}
+
+#webmaster{
+	display:inline;
+	position:absolute;
+	right:20px;
+	color:white;
 }
 
 /* Category, Titles, and Article CSS  */

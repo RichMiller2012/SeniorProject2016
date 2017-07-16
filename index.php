@@ -1,5 +1,6 @@
 <?php
 	include("php/dbconnect.php");
+	include("php/loadconfig.php");
 ?>
 
 <html>
@@ -68,7 +69,6 @@
 			<li><a href="index.php?state=category&type=family&categoryID=0">Family</a></li>
 			<li><a href="index.php?state=ebook">Ebooks</a></li>
 			<li><a href="">My Blog!</a></li>
-			<li><a href="php/login/index.php">Webmaster</a></li>
 		  </ul>	  
 	 </div>
   </div>
@@ -158,7 +158,12 @@
   </div>
 
   <div id="footer">
+	<div id="copywright">
 	Copywright 2012
+	</div>
+	<div id="webmaster">
+		<a href="php/login/index.php">Webmaster</a>
+	</div>
   </div>
 
 

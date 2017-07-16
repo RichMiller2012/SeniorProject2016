@@ -27,10 +27,12 @@
 					</div>
 					<div class="col-md-4">
 					  <div class="row">
+					  <!--
 						<div class="col-md-6">
 							<img class="add-cart-button cart-button" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
 						</div>
-						<div class="col-md-6">
+						-->
+						<div class="col-md-12" id="buy-now_btn">
 							<form action="/php/paypal/payment.php" method="POST">
 								<input id="single-id" type="hidden" name="ids" value="<?php echo $ebook_rs['ebook_id']?>"> 
 								<input id="selected-price" type="hidden" name="price" value="<?php echo $ebook_rs['price']?>">
@@ -144,7 +146,9 @@
 		});	
 			
 	</script>
-	
+	<?php
+		if($config_use_shop_cart == 'true'){
+	?>
 	<div class="col-md-3">
 		<div class="shopping-cart">
 			<h2>Shopping Cart</h2>
@@ -171,6 +175,10 @@
 		</div>
 	</div>	
 </div>
+
+<?php
+		}
+?>
 
 <?php
  //include("info_modal.php");
