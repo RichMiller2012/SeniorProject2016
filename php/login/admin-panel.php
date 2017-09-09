@@ -4,6 +4,8 @@
 	if(!isset($_SESSION['admin'])){
 		header("location:login.php?failed=attempt");
 	}
+	
+	
 ?>
 
 
@@ -12,9 +14,9 @@
 <head>
 <title>Admin Control Panel</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin.css">
 </head>
-<body>
+<body >
 	<h1>Admin Panel</h1>
 	<h4><a href="adminindex.php?logout=true">Logout</a></h4>
 	<a href="admin-panel.php"><button class="btn btn-primary">Main Panel</button></a>
@@ -71,6 +73,10 @@
 			<a href="admin-panel.php?type=file-upload">
 				<button class="btn">Upload Images</button></a>
 		</li>
+		<li>
+			<a href="admin-panel.php?type=color-theme">
+			    <button class="btn">Change Color Theme</button></a>
+		</li>
 	</ul>
 	
 <?php
@@ -95,6 +101,9 @@
 	}
 	if(isset($_GET['type']) && $_GET['type'] === "file-upload"){
 		include("upload/upload-form.php");
+	}
+	if(isset($_GET['type']) && $_GET['type'] === "color-theme"){
+		include("colortheme/color-theme.php");
 	}
 
 ?>

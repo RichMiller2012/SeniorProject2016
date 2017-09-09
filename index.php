@@ -17,7 +17,7 @@
   
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.php">
   <link rel="stylesheet" type="text/css" href="css/autosuggest-style.css">
   <link rel="stylesheet" type="text/css" href="css/rating.css">
   <link rel="stylesheet" type="text/css" href="css/shopping-cart.css">

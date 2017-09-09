@@ -1,12 +1,55 @@
-:root{
-	/* Color Theme 001 */
-	--main-color: #8EB9DE;
-	--primary-color: #1D7872;
-	--secondary-color: #71B095;
-	--tertiary-color: #DEDBA7;
-	--pop-color: #D13F32;
 
-}
+<?php
+    header("Content-type: text/css; charset: UTF-8");
+	include("../php/dbconnect.php");
+	
+	//get the colors from the database
+	$color_theme_config_sql = "SELECT * FROM config";
+		
+	$color_theme_config_query = mysqli_query($dbconnect, $color_theme_config_sql);
+	$color_theme_config_rs = mysqli_fetch_assoc($color_theme_config_query);
+	
+	//set default colors
+	
+	echo $color_theme_config_rs;
+	
+	if(!empty($color_theme_config_rs)){
+		do{
+			$color_key = $color_theme_config_rs['config_key'];
+			
+			switch ($color_key){
+				case "main_color":
+					$main_color = $color_theme_config_rs['config_value'];
+				case "primary_color":
+					$primary_color = $color_theme_config_rs['config_value'];
+				case "secondary_color":
+				    $secondary_color = $color_theme_config_rs['config_value'];
+				case "tertiary_color":
+				    $tertiary_color = $color_theme_config_rs['config_value'];
+				case "pop_color":
+					$pop_color = $color_theme_config_rs['config_value'];		
+			}
+			
+			/*
+			if($color_key == 'main_color') $main_color = $color_theme_config_rs['config_value'];
+			if($color_key == 'primary_color') $primary_color = $color_theme_config_rs['config_value'];
+			if($color_key == 'secondary_color') $secondary_color = $color_theme_config_rs['config_value'];
+			if($color_key == 'tertiary_color') $tertiary_color = $color_theme_config_rs['config_value'];
+			if($color_key == 'pop_color') $pop_color = $color_theme_config_rs['config_value'];	
+			*/
+			
+		} while($color_theme_config_rs=mysqli_fetch_assoc($color_theme_config_query));
+	} else {
+		/*
+		$main_color = '#8EB9DE';
+		$primary_color = '#1D7872';
+		$secondary_color = '#71B095';
+		$tertiary_color = '#DEDBA7';
+		$pop_color = '#D13F32'; 
+		*/
+	}
+
+?>
 
 div {
   display: block;
@@ -14,7 +57,7 @@ div {
 
 body{
   margin: 0;
-  background-color: var(--main-color);
+  background-color: <?php echo $main_color; ?>
   /*background-image: url("../img/backgrounds/main-background.png");*/
 }
 
@@ -57,7 +100,7 @@ p{
 #nav-wrapper{
   clear: left;
   height: 80px;
-  background-color: var(--primary-color);
+  background-color: <?php echo $primary_color; ?>;
   /*background-image: url("../img/backgrounds/primary-background.png");*/
 }
 #navbar-list {
@@ -96,7 +139,7 @@ p{
 
 /* Change the link color to #111 (black) on hover */
 #navbar-list li a:hover {
-	background-color: var(--secondary-color);
+	background-color: <?php echo $secondary_color; ?>;
     /*background-image: url("../img/backgrounds/secondary-background.png");*/
 }
 
@@ -111,7 +154,7 @@ p{
 .carousel-container{
   opacity: 0.9;
   height:600px;
-  background-color: var(--primary-background);
+  background-color: <?php echo $primary_color; ?>;
   /*background-image: url("../img/backgrounds/primary-background.png");*/
 }
 .carousel-inner > .item > img,
@@ -125,7 +168,7 @@ p{
   margin:40px;
   height:500px;
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: <?php echo $secondary_color; ?>;
   /* background-image: url("../img/backgrounds/secondary-background.png");*/
 }
 
@@ -135,7 +178,7 @@ p{
   margin:40px;
   max-height:800px;
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: <?php echo $secondary_color; ?>;
   /*background-image: url("../img/backgrounds/secondary-background.png");*/
   overflow-y: auto;
 }
@@ -162,7 +205,7 @@ p{
 #footer{
 	opacity: 0.9;
 	height:25px;
-	background-color: var(--primary-color);
+	background-color: <?php echo $primary_color; ?>;
 	/*background-image: url("../img/backgrounds/primary-background.png");*/
 	bottom:0;
 	text-align:center;
@@ -189,7 +232,7 @@ p{
 
 .category-item{
 	height:120px;
-	background-color: var(--secondary-color);
+	background-color: <?php echo $secondary_color; ?>;
 	/*background-image: url("../img/backgrounds/secondary-background.png");*/
 	margin:20px;
 	border-radius: 10px;
@@ -200,7 +243,7 @@ p{
 }
 .list-group-item{
 	margin-bottom:5px;
-	background-color: var(--secondary-color);
+	background-color: <?php echo $secondary_color; ?>;
 	/*background-image: url("../img/backgrounds/secondary-background.png");*/
 	border:none;
 }
@@ -234,7 +277,7 @@ p{
 	margin-right:auto;
 }
 .article-section  {
-	background-color: var(--secondary-color);
+	background-color: <?php echo $secondary_color; ?>;
 	/*background-image: url("../img/backgrounds/secondary-background.png");*/
 	padding:50px;
 	min-height:1000px;
@@ -244,7 +287,7 @@ p{
 	box-shadow: 5px 5px 5px #888888;	
 }
 .adsense-bar{
-	background-color: var(--secondary-color);
+	background-color: <?php echo $secondary_color; ?>;
 	/*background-image: url("../img/backgrounds/secondary-background.png");*/
 	padding:50px;
 	min-height:1000px;
@@ -261,7 +304,7 @@ p{
 }
 
 .shopping-cart{
-	background-color: var(--secondary-color);
+	background-color: <?php echo $secondary_color; ?>;
 	/*background-image: url("../img/backgrounds/secondary-background.png");*/
 	padding:50px;
 	border-radius:50px;
