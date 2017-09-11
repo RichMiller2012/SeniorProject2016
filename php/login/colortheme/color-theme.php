@@ -5,10 +5,15 @@
 	$color_theme_config_query = mysqli_query($dbconnect, $color_theme_config_sql);
 	$color_theme_config_rs = mysqli_fetch_assoc($color_theme_config_query);
 	
-	//set default colors
+	$main_color = "";
+	$primary_color = "";
+	$secondary_color = "";
+	$tertiary_color = "";
+	$pop_color = "";
 	
 	if(!empty($color_theme_config_rs)){
 		do{
+		    
 			$color_key = $color_theme_config_rs['config_key'];
 			
 			switch ($color_key){
@@ -42,8 +47,14 @@
 		$pop_color = '#D13F32'; 
 		*/
 	}
-
-
+	
+	$_GET['main'] = $main_color;
+    $_GET['primary'] = $primary_color;
+	$_GET['secondary'] = $secondary_color;
+	$_GET['tertiary'] = $tertiary_color;
+    $_GET['pop'] = $pop_color;
+	
+	
 ?>
 
 <div class="container">
@@ -51,7 +62,7 @@
         <h1>Color Theme Page</h1>
 	</div>
 	
-	<form action="admin-panel.php" method="GET">
+	<form action="admin-panel.php?type=color-theme" method="GET">
 	    
 		<!-- main-color -->
 		<div class="row">
@@ -59,7 +70,7 @@
 			    <h4 data-toggle="tooltip" data-placement="top" title="This colors the main body behind all the elements">Main Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="main" value="<?php echo $main_color;?>" required>
+			    <input type="text" class="form-control" name="main" value="<?php echo $_GET['main'];?>" required>
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $main_color;?>">
 			</div>
@@ -71,7 +82,7 @@
 			    <h4>Primary Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="primary" value="<?php echo $primary_color;?>" required>
+			    <input type="text" class="form-control" name="primary" value="<?php echo $_GET['primary'];?>" required>
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $primary_color;?>">
 			</div>
@@ -83,7 +94,7 @@
 			    <h4>Secondary Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="secondary" value="<?php echo $secondary_color;?>" required>
+			    <input type="text" class="form-control" name="secondary" value="<?php echo $_GET['secondary'];?>" required>
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $secondary_color;?>">
 			</div>
@@ -95,7 +106,7 @@
 			    <h4>Tertiary Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="tertiary" value="<?php echo $tertiary_color;?>" required>
+			    <input type="text" class="form-control" name="tertiary" value="<?php echo $_GET['tertiary'];?>" required>
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $tertiary_color;?>">
 			</div>
@@ -106,7 +117,7 @@
 			    <h4 data-toggle="tooltip" data-placement="bottom" title="Not currently used on the site, need to figure out how to include it">Pop Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="pop" value="<?php echo $pop_color;?>" >
+			    <input type="text" class="form-control" name="pop" value="<?php echo $_GET['pop'];?>" >
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $pop_color;?>">
 			</div>
@@ -119,36 +130,6 @@
 		</div>
 		
 	</form>
-
-
-<?php
-
-	if(isset($_GET['color-update'])){
-		
-		$main = $_GET['main'];
-		$primary = $_GET['primary'];
-		$secondary = $_GET['secondary'];
-		$tertiary = $_GET['tertiary'];
-		$pop = $_GET['pop'];
-
-		$update_color_sql = 
-		"
-			UPDATE config SET config_value = '$main' WHERE config_key = 'main_color'; 
-			UPDATE config SET config_value = '$primary' WHERE config_key = 'primary_color'; 
-			UPDATE config SET config_value = '$secondary' WHERE config_key = 'secondary_color'; 
-			UPDATE config SET config_value = '$tertiary' WHERE config_key = 'tertiary_color'; 
-			UPDATE config SET config_value = '$pop' WHERE config_key = 'pop_color';
-		";
-		
-		$update_color_query = mysqli_multi_query($dbconnect, $update_color_sql);
-		
-		sleep(2);
-		header("location:admin-panel.php?type=color-theme");
-?>
-		
-<?php			
-	}
-?>
 </div>
 
 <script>
@@ -156,4 +137,29 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
 </script>
+
+<?php
+	if(isset($_GET['color-update'])){
+		
+		
+		$main_color = $_GET['main'];
+		$primary_color = $_GET['primary'];
+		$secondary_color = $_GET['secondary'];
+		$tertiary_color = $_GET['tertiary'];
+		$pop_color = $_GET['pop'];
+
+		$update_color_sql = 
+		"
+			UPDATE config SET config_value = '$main_color' WHERE config_key = 'main_color'; 
+			UPDATE config SET config_value = '$primary_color' WHERE config_key = 'primary_color'; 
+			UPDATE config SET config_value = '$secondary_color' WHERE config_key = 'secondary_color'; 
+			UPDATE config SET config_value = '$tertiary_color' WHERE config_key = 'tertiary_color'; 
+			UPDATE config SET config_value = '$pop_color' WHERE config_key = 'pop_color';
+		";
+		
+		$update_color_query = mysqli_multi_query($dbconnect, $update_color_sql);
+		
+		unset($_GET['color-update']);
+	}
+?>
 
