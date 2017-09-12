@@ -95,8 +95,9 @@
 			</ol>
 
 			<!-- Wrapper for slides -->
+			<!-- Add/Change Carousel Images here -->
 			<div class="carousel-inner" role="listbox">
-			  <div class="item active">
+			  <div class="item active"> <!-- this is the first item that diplays -->
 				<img src="img/flower.jpg" alt="flower" height="400px">
 			  </div>
 
