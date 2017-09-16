@@ -24,7 +24,10 @@
 	if(isset($_GET['auto_title'])){
 		include("php/autosuggest/autosuggest-find.php");
 	}
+	
+	echo $_SERVER['DOCUMENT_ROOT'];
 ?>
+
 </div>
 
 <script type="text/javascript">

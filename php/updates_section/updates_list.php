@@ -17,7 +17,7 @@
 		echo "<h4 class='new-alert'>New articles are here!</h4><hr>";
 		do{
 ?>		
-		<a href="http://localhost/index.php?state=text&textblockID=<?php echo $updates_section_rs['textblockID']?>">
+		<a href="index.php?state=text&textblockID=<?php echo $updates_section_rs['textblockID']?>">
 		<div class="new-update-block">
 			<h5><?php echo $updates_section_rs['title'] ?></h5>
 			<p><?php echo $updates_section_rs['description']?></p>

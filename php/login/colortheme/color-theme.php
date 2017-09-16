@@ -62,7 +62,7 @@
         <h1>Color Theme Page</h1>
 	</div>
 	
-	<form action="admin-panel.php?type=color-theme" method="GET">
+	<form action="colortheme/color-theme-save.php" method="GET">
 	    
 		<!-- main-color -->
 		<div class="row">
@@ -70,7 +70,7 @@
 			    <h4 data-toggle="tooltip" data-placement="top" title="This colors the main body behind all the elements">Main Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="main" value="<?php echo $_GET['main'];?>" required>
+			    <input id="main" type="text" class="form-control" name="main" value="<?php echo $_GET['main'];?>" required>
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $main_color;?>">
 			</div>
@@ -82,7 +82,7 @@
 			    <h4>Primary Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="primary" value="<?php echo $_GET['primary'];?>" required>
+			    <input id="primary" type="text" class="form-control" name="primary" value="<?php echo $_GET['primary'];?>" required>
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $primary_color;?>">
 			</div>
@@ -94,7 +94,7 @@
 			    <h4>Secondary Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="secondary" value="<?php echo $_GET['secondary'];?>" required>
+			    <input id="secondary" type="text" class="form-control" name="secondary" value="<?php echo $_GET['secondary'];?>" required>
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $secondary_color;?>">
 			</div>
@@ -106,7 +106,7 @@
 			    <h4>Tertiary Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="tertiary" value="<?php echo $_GET['tertiary'];?>" required>
+			    <input id="tertiary" type="text" class="form-control" name="tertiary" value="<?php echo $_GET['tertiary'];?>" required>
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $tertiary_color;?>">
 			</div>
@@ -117,7 +117,7 @@
 			    <h4 data-toggle="tooltip" data-placement="bottom" title="Not currently used on the site, need to figure out how to include it">Pop Color</h4>
 			</div>
 			<div class="col-md-4">
-			    <input type="text" class="form-control" name="pop" value="<?php echo $_GET['pop'];?>" >
+			    <input id="pop" type="text" class="form-control" name="pop" value="<?php echo $_GET['pop'];?>" >
 			</div>	
 			<div class="col-md-2 text-sample" style="background-color:<?php echo $pop_color;?>">
 			</div>
@@ -134,32 +134,11 @@
 
 <script>
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
+    $('[data-toggle="tooltip"]').tooltip(); 
+
+	
 });
 </script>
 
-<?php
-	if(isset($_GET['color-update'])){
-		
-		
-		$main_color = $_GET['main'];
-		$primary_color = $_GET['primary'];
-		$secondary_color = $_GET['secondary'];
-		$tertiary_color = $_GET['tertiary'];
-		$pop_color = $_GET['pop'];
 
-		$update_color_sql = 
-		"
-			UPDATE config SET config_value = '$main_color' WHERE config_key = 'main_color'; 
-			UPDATE config SET config_value = '$primary_color' WHERE config_key = 'primary_color'; 
-			UPDATE config SET config_value = '$secondary_color' WHERE config_key = 'secondary_color'; 
-			UPDATE config SET config_value = '$tertiary_color' WHERE config_key = 'tertiary_color'; 
-			UPDATE config SET config_value = '$pop_color' WHERE config_key = 'pop_color';
-		";
-		
-		$update_color_query = mysqli_multi_query($dbconnect, $update_color_sql);
-		
-		unset($_GET['color-update']);
-	}
-?>
 

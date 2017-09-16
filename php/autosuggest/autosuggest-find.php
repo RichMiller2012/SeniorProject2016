@@ -15,7 +15,12 @@
 	}
 	
 	if($auto_title_id != 0){
-		header("Location: http://localhost/index.php?state=text&textblockID=$auto_title_id");
+		
+		$url = "index.php?state=text&textblockID=$auto_title_id";
+		
+		echo $url;
+		
+		header("Location:$url");
 	} else {
 		
 	}
