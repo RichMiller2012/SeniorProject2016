@@ -10,6 +10,9 @@
 			$title_item = $auto_title_rs["title"];
 			array_push($title_array, $title_item);
 		} while($auto_title_rs=mysqli_fetch_assoc($auto_title_query));
+	} else {
+		$default_text = "No Titles";
+		array_push($title_array, $default_text);
 	}
 ?>
 
