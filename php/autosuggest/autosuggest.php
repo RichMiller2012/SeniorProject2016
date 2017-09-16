@@ -3,6 +3,8 @@
 	$auto_title_query = mysqli_query($dbconnect, $auto_title_sql);
 	$auto_title_rs = mysqli_fetch_assoc($auto_title_query);
 	
+	echo $auto_title_rs;
+	
 	$title_array = array();
 	
 	if(!empty($auto_title_rs)){
