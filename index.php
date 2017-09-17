@@ -99,19 +99,19 @@
 			<!-- Add/Change Carousel Images here -->
 			<div class="carousel-inner" role="listbox">
 			  <div class="item active"> <!-- this is the first item that diplays -->
-				<img src="img/flower.jpg" alt="flower" height="400px">
+				<img src="img/carousel912171.jpg" alt="flower" height="400px">
 			  </div>
 
 			  <div class="item">
-				<img src="img/flower.jpg" alt="flower" height="400px">
+				<img src="img/carousel912172.jpg" alt="flower" height="400px">
 			  </div>
 
 			  <div class="item">
-				<img src="img/garden.jpg" alt="garden" height="400px">
+				<img src="img/carousel912173.jpg" alt="garden" height="400px">
 			  </div>
 
 			  <div class="item">
-				<img src="img/table.jpg" alt="table">
+				<img src="img/carousel912174.jpg" alt="table">
 			  </div>
 			</div>
 
