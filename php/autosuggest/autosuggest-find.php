@@ -17,13 +17,9 @@
 	if($auto_title_id != 0){
 		
 		$url = "index.php?state=text&textblockID=$auto_title_id";
-		
-		echo $url;
-		
-		header("Location:$url");
+
+    echo "<meta http-equiv='refresh' content='1;url=$url'>";
 	} else {
 		
 	}
-
-
 ?>

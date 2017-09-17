@@ -3,8 +3,6 @@
 	$auto_title_query = mysqli_query($dbconnect, $auto_title_sql);
 	$auto_title_rs = mysqli_fetch_assoc($auto_title_query);
 	
-	echo $auto_title_rs;
-	
 	$title_array = array();
 	
 	if(!empty($auto_title_rs)){
@@ -29,8 +27,6 @@
 	if(isset($_GET['auto_title'])){
 		include("php/autosuggest/autosuggest-find.php");
 	}
-	
-	echo $_SERVER['DOCUMENT_ROOT'];
 ?>
 
 </div>

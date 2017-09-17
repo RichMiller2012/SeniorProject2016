@@ -1,4 +1,5 @@
 <?php
+    ob_end_clean(); 
 	include("php/dbconnect.php");
 	include("php/loadconfig.php");
 ?>

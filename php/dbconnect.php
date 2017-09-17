@@ -1,6 +1,4 @@
 <?php
-
-  //try local, then try remote server
   $dbconnect = mysqli_connect("localhost", "root", "", "hsdb");
   if(mysqli_connect_errno()){
 	  $dbconnect = mysqli_connect("localhost", "tfamilyh_test", "thefamilyhomestead2017", "tfamilyh_test");
@@ -9,4 +7,5 @@
 	  exit;
 	  }
     }
+    mysqli_set_charset( $dbconnect, 'utf8');
 ?>
