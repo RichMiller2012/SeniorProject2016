@@ -141,6 +141,7 @@
 		  </p>
 		</div>
 	  </div>
+	  
 	  <div class="col-md-3">
 		<div class="updates-info">
 		  <div class="updates-inner">
@@ -150,8 +151,10 @@
 			include('php/updates_section/updates_list.php');
 ?>
 		  </div>
-		</div >
+		</div>
 	  </div>
+	  
+	  
 	</div>
 
 <?php

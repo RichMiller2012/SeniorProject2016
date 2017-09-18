@@ -9,10 +9,6 @@
 	$color_theme_config_query = mysqli_query($dbconnect, $color_theme_config_sql);
 	$color_theme_config_rs = mysqli_fetch_assoc($color_theme_config_query);
 	
-	//set default colors
-	
-	echo $color_theme_config_rs;
-	
 	if(!empty($color_theme_config_rs)){
 		do{
 			$color_key = $color_theme_config_rs['config_key'];
