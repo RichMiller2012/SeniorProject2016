@@ -7,5 +7,5 @@
 	  exit;
 	  }
     }
-    //mysqli_set_charset( $dbconnect, 'utf8');
+    mysqli_set_charset( $dbconnect, 'utf8');
 ?>

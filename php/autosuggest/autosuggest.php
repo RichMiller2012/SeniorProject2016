@@ -32,7 +32,7 @@
 </div>
 
 <script type="text/javascript">
-var titles = <?php echo json_encode($title_array); ?>;
+var titles = <?php echo json_encode($title_array);?>;
 
 $(function(){
   

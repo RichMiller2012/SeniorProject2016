@@ -21,6 +21,6 @@
 		
 		unset($_GET['color-update']);
 	}
-	header("location:admin-panel.php?type=color-theme");
+	header("location:../admin-panel.php?type=color-theme");
 	
 ?>
