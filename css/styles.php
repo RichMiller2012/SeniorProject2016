@@ -133,7 +133,6 @@ p{
 }
 
 
-/* Change the link color to #111 (black) on hover */
 #navbar-list li a:hover {
 	background-color: <?php echo $secondary_color; ?>;
     /*background-image: url("../img/backgrounds/secondary-background.png");*/
@@ -148,16 +147,24 @@ p{
 }
 
 .carousel-container{
+  margin-top:40px;
   opacity: 0.9;
   height:600px;
-  background-color: <?php echo $primary_color; ?>;
+  background-color: <?php echo $pop_color; ?>;
   /*background-image: url("../img/backgrounds/primary-background.png");*/
 }
+
+.carousel-inner{
+  text-align:-webkit-center;
+}
+
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-     height: 600px;
-	  width:100%
+     height: 100%;
+	  width:100%;
+	  padding:1%;
 }
+
 .site-info{
   opacity: 0.5;
   float:left;
@@ -172,7 +179,8 @@ p{
   opacity: 0.5;
   float:left;
   margin:40px;
-  max-height:800px;
+  min-height:600px;
+  max-height:600px;
   width: 100%;
   background-color: <?php echo $secondary_color; ?>;
   /*background-image: url("../img/backgrounds/secondary-background.png");*/

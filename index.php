@@ -84,7 +84,9 @@
 ?>		
   
 	<div class="row">
-	  <div class="col-md-9">
+	  <div class="col-md-1">
+	  </div>
+	  <div class="col-md-6">
 	  
 		<div class="carousel-container">
 		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -127,6 +129,8 @@
 			</a>
 		  </div>
 		</div>
+	  </div>
+	  <div class="col-md-1">
 	  </div>
 	  <div class="col-md-3">
 		<div class="updates-info">
