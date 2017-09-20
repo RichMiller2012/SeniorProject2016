@@ -169,7 +169,6 @@ p{
   opacity: 0.5;
   float:left;
   margin:40px;
-  height:500px;
   width: 100%;
   background-color: <?php echo $secondary_color; ?>;
   /* background-image: url("../img/backgrounds/secondary-background.png");*/

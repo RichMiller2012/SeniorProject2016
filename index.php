@@ -147,14 +147,34 @@
 	<div class="row main-content">
 	  <div class="col-md-9">
 		<div class="site-info">
-		  <h5>Site Info Section</h5>
+		  <h5>Welcome to The Family Homestead!</h5>
 		  <p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi orci lorem, rhoncus ac malesuada non, commodo sit amet purus. Praesent iaculis, ante in pharetra condimentum, neque nulla viverra ligula, in gravida sapien dolor porta diam. Aenean non nunc placerat, rhoncus dui et, faucibus turpis. Suspendisse a velit in purus ullamcorper dapibus. Vivamus tristique porttitor fringilla. Mauris non pharetra lacus. Phasellus aliquet, turpis ac viverra blandit, ligula sapien tristique tortor, quis dignissim est elit et turpis. Maecenas eget congue dui. Cras molestie, justo vel fringilla tincidunt, nibh nisi pretium tortor, vitae efficitur enim odio at odio. Donec non odio fringilla, sollicitudin metus non, pellentesque libero. Maecenas vitae semper ligula, dapibus mattis sem. Morbi et arcu vel leo malesuada mattis eu eget neque. Maecenas mattis mi id elementum consectetur. Nam nec mollis turpis, id consectetur massa. Sed sit amet nisl fermentum, dictum nunc ac, lobortis lacus.
+			My name is Crystal and I am mom to 8 grown children and 12 grandchildren.  My husband and I live in the Pacific Northwest on our little homestead.  
 		  </p>
-		  <br>
 		  <p>
-			Donec finibus urna at vehicula fringilla. Morbi sit amet laoreet velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam at dui quis ligula efficitur cursus. Pellentesque posuere nibh vitae mi maximus suscipit. Curabitur convallis varius libero et facilisis. Vestibulum semper molestie lectus, nec maximus magna. Pellentesque molestie laoreet turpis, in rutrum lectus finibus eu. Praesent sit amet erat non lorem lobortis luctus. Morbi vel pretium ante. Aliquam erat volutpat. Sed mollis ante ac nunc aliquam maximus vitae non velit. Sed ornare est neque, eget dapibus risus faucibus in. Etiam risus ex, consequat non vehicula sit amet, venenatis vitae dolor. Phasellus lectus dui, placerat eu condimentum ut, consectetur dignissim lacus. Sed sagittis nibh metus, vel tristique ipsum sollicitudin non.</p>
+			I started this website back in 2005.  We had a house full of children and many farm animals.  I homeschooled my children through grade school and high school.  We gardened, canned food, sewed, milked goats, raised chickens, raised pigs, and had a couple horses.
 		  </p>
+		  <p>
+			I shared many things over the years from my life.  We have always lived on one income and I can say, it can be done.  It is a lifestyle choice.  You learn to reduce the budget, cook healthy economical meals, and you learn to be frugal in many ways.
+		  </p>
+		  <p>
+			Today my husband and I almost have an empty nest.  Our youngest son lives at home but works full time and has a life of his own.  I still enjoy gardening, sewing, homemaking tasks, and have a few farm animals.   You can find me regularly on my blog (link at the top of the page) sharing about my day to day life as a homemaker. 				  
+		  </p>
+		  <p>
+			Today my husband and I almost have an empty nest.  Our youngest son lives at home but works full time and has a life of his own.  I still enjoy gardening, sewing, homemaking tasks, and have a few farm animals.   You can find me regularly on my blog (link at the top of the page) sharing about my day to day life as a homemaker. 				  
+		  </p>
+		  <p>
+			My website has gotten an overhaul and been updated as what I had previously was very out of date.  My web developer son graciously has given much time to helping me make this change. 
+		  </p>
+		  <p>
+			I have kept many of my recipes and homemaking tips from over the years to help and encourage those who would like to learn the art of homemaking. 
+		  </p>
+		  <p>
+			I am a born again believer in Jesus Christ and this website along with my blog have been a ministry to me for many years now.  My greatest hearts desire is to encourage women to love their husbands, to love their children and to love their home and realize what an amazing blessing it is to be a homemaker.  It does not matter if you are a full time homemaker or you work outside the home.  Homemaking is from the heart, a heart that desires to do the best they can for their family.
+		  </p>
+		  
+		  
+
 		</div>
 	  </div>
 	  
