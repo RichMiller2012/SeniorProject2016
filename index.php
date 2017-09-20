@@ -84,7 +84,8 @@
 ?>		
   
 	<div class="row">
-	  <div class="col-md-12 no-pad">
+	  <div class="col-md-9">
+	  
 		<div class="carousel-container">
 		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -127,9 +128,20 @@
 		  </div>
 		</div>
 	  </div>
+	  <div class="col-md-3">
+		<div class="updates-info">
+		  <div class="updates-inner">
+		  <h5>Website Updates Section</h5>
+		  <br>
+<?php	  
+			include('php/updates_section/updates_list.php');
+?>
+		  </div>
+		</div>
+	  </div>
 	</div>
 	<div class="row main-content">
-	  <div class="col-md-8">
+	  <div class="col-md-9">
 		<div class="site-info">
 		  <h5>Site Info Section</h5>
 		  <p>
@@ -142,17 +154,7 @@
 		</div>
 	  </div>
 	  
-	  <div class="col-md-3">
-		<div class="updates-info">
-		  <div class="updates-inner">
-		  <h5>Website Updates Section</h5>
-		  <br>
-<?php	  
-			include('php/updates_section/updates_list.php');
-?>
-		  </div>
-		</div>
-	  </div>
+
 	  
 	  
 	</div>
