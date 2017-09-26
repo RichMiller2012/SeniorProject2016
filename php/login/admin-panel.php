@@ -77,6 +77,10 @@
 			<a href="admin-panel.php?type=color-theme">
 			    <button class="btn">Change Color Theme</button></a>
 		</li>
+		<li>
+		     <a href="admin-panel.php?type=carousel">
+			    <button class="btn">Carousel Photos</button></a>
+		</li>
 	</ul>
 	
 <?php
@@ -104,6 +108,9 @@
 	}
 	if(isset($_GET['type']) && $_GET['type'] === "color-theme"){
 		include("colortheme/color-theme.php");
+	}
+	if(isset($_GET['type']) && $_GET['type'] === "carousel"){
+		include("carousel/carousel.php");
 	}
 
 ?>

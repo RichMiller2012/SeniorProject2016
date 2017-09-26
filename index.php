@@ -75,9 +75,7 @@
   </div>
 
   <div class="container-fluid">
-  <?php
-  
-
+<?php
 	if(isset($_GET['state'])){
 		include("php/main-content.php");
 	} else {
@@ -90,47 +88,88 @@
 	  
 		<div class="carousel-container">
 		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-			  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			  <li data-target="#myCarousel" data-slide-to="1"></li>
-			  <li data-target="#myCarousel" data-slide-to="2"></li>
-			  <li data-target="#myCarousel" data-slide-to="3"></li>
-			</ol>
+<?php
+			  $carousel_image_sql = "SELECT * FROM carousel";
+			  $carousel_image_query = mysqli_query($dbconnect, $carousel_image_sql);
+			  $carousel_image_rs = mysqli_fetch_assoc($carousel_image_query);
+					
+			  $first_key = key($carousel_image_rs);
+			  $carousel_image_index = 0;
+		   		   
+				  if(!empty($carousel_image_rs)){
+?>
+			        <ol class="carousel-indicators">
+<?php	
+					do {
+					  if(key($carousel_image_rs) == $first_key){
+?>
+						<li data-target="#myCarousel" data-slide-to="<?php echo $carousel_image_index; ?>" class="active"></li>
+<?php
+					  } else {
+?>
+						<li data-target="#myCarousel" data-slide-to="<?php echo $carousel_image_index; ?>"></li>
+<?php
+					  }
+					  $carousel_image_index++;
+					} while ($carousel_image_rs = mysqli_fetch_assoc($carousel_image_query));
+?>
+					</ol>
+<?php			
+				  }	
+				  //I have to run the query again...which is dumb
+				  $carousel_image_sql2 = "SELECT * FROM carousel";
+			      $carousel_image_query2 = mysqli_query($dbconnect, $carousel_image_sql2);
+			      $carousel_image_rs2 = mysqli_fetch_assoc($carousel_image_query2);
+				  $first_key2 = key($carousel_image_rs2);				  
+?>
+					
 
-			<!-- Wrapper for slides -->
-			<!-- Add/Change Carousel Images here -->
-			<div class="carousel-inner" role="listbox">
-			  <div class="item active"> <!-- this is the first item that diplays -->
-				<img src="img/carousel912171.jpg" alt="flower" height="400px">
-			  </div>
+<?php
 
-			  <div class="item">
-				<img src="img/carousel912172.jpg" alt="flower" height="400px">
-			  </div>
-
-			  <div class="item">
-				<img src="img/carousel912173.jpg" alt="garden" height="400px">
-			  </div>
-
-			  <div class="item">
-				<img src="img/carousel912174.jpg" alt="table">
-			  </div>
+				  if(!empty($carousel_image_rs2)){
+?>
+					  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<?php
+					do{
+						if(key($carousel_image_rs2) === $first_key){
+							?> <div class='item active'> <?php 
+						} else {
+							?> <div class='item'> <?php
+						}
+?>
+						<img src="img/carousel/<?php echo $carousel_image_rs2['file']?>" height="400px"?>
+						<div class="carousel-caption">
+							<h3><?php echo $carousel_image_rs2['title'];?></h3>
+							<p><?php echo $carousel_image_rs2['description'];?></p>
+						</div>
+<?php											
+						?></div><?php
+					} while ($carousel_image_rs2 = mysqli_fetch_assoc($carousel_image_query2));
+?>
+					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+					</div>
+				</div>
 			</div>
-
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-			  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			  <span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-			  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			  <span class="sr-only">Next</span>
-			</a>
-		  </div>
 		</div>
-	  </div>
-	  <div class="col-md-1">
+<?php
+				  }
+?>
+
+
+
+
+	 
+		
+		
+		
+      <div class="col-md-1">
 	  </div>
 	  <div class="col-md-3">
 		<div class="updates-info">
