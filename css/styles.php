@@ -53,8 +53,8 @@ div {
 
 body{
   margin: 0;
-  background-color: <?php echo $main_color; ?>
-  /*background-image: url("../img/backgrounds/main-background.png");*/
+  background-image: url("../img/backgrounds/image-background.jpg");
+  /*background-color: <?php echo $main_color; ?>*/
 }
 
 p{
